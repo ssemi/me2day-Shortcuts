@@ -51,7 +51,7 @@ function naviShortcut()
             appendShorcutText(keylog[i], topMenus[i]);
             keydata[keylog[i].toString().toLowerCase()] = topMenus[i].href;
         }
-    }catch (ex){ console.log(ex.message);}
+    }catch (ex){}
 
     try {
         var menus = document.querySelectorAll("div.menu_navi > ul > li > a");
