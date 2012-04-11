@@ -5,7 +5,7 @@
       "matches": [ "http://me2day.net/*" ]
    } ],
    "converted_from_user_script": true,
-   "icons": { "32": "me2day_favicon.ico", "48":"me2day_favicon.ico", "128": "me2day_favicon.ico" },
+   "icons": { "16": "me2shortcuts.ico", "48":"me2shortcuts.ico", "128": "me2shortcuts.ico" },
    "description": "미투데이 메뉴 단축키 생성",
    "name": "me2day shortcuts",
    "version": "0.9"
