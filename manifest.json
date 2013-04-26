@@ -1,12 +1,16 @@
-﻿{
-   "content_scripts": [ {
+{
+  "name": "me2day shortcuts",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "미투데이 메뉴 단축키 생성",
+  "icons": {  "16": "me2shortcuts.ico", "48":"me2shortcuts.ico", "128": "me2shortcuts.ico"  },
+  "content_scripts": [{
       "all_frames": true,
       "js": [ "me2shortcuts.js" ],
       "matches": [ "http://me2day.net/*" ]
-   } ],
-   "converted_from_user_script": true,
-   "icons": { "16": "me2shortcuts.ico", "48":"me2shortcuts.ico", "128": "me2shortcuts.ico" },
-   "description": "미투데이 메뉴 단축키 생성",
-   "name": "me2day shortcuts",
-   "version": "0.9"
+   }],
+  "converted_from_user_script": true,
+  "homepage_url": "http://me2day.net/ssemi",
+  "incognito": "spanning",
+  "offline_enabled": false
 }
