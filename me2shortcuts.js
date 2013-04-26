@@ -1,5 +1,5 @@
-﻿// me2day shortcuts
-// v0.9
+// me2day shortcuts
+// v1.0
 // Copyright (c) 2010, semin Seol (ssemi)
 
 // This is a Greasemonkey user script. 
@@ -41,14 +41,14 @@ function naviShortcut()
 {
     try 
     {
-        var topMenus = document.querySelectorAll("div.topMenu > ul > li > a");
+        var topMenus = document.querySelectorAll("div.c_myinfo > div > a, div.c_myinfo > div > div > a");
         var tlen = topMenus.length;
 
-        var keylog =  (topMenus.length <= 2) ? ['L', 'J'] : ['H', 'F', 'M', 'N'];
+        var keylog =  (topMenus.length <= 2) ? ['L', 'J'] : ['H', 'N', 'C', 'F', 'O'];
         for (var i = 0; i < tlen; i++)
         {
             keydata[keylog[i]] = topMenus[i].href;            
-            appendShorcutText(keylog[i], topMenus[i]);
+            appendShorcutText(keylog[i], topMenus[i], 'top');
             keydata[keylog[i].toString().toLowerCase()] = topMenus[i].href;
         }
     }catch (ex){}
@@ -64,10 +64,11 @@ function naviShortcut()
     }catch (ex){}
 }
 
-function appendShorcutText(txt, el)
+function appendShorcutText(txt, el, section)
 {
     var sp = document.createElement('span');
-    sp.style.float = "left";
+    if (section != 'top')
+        sp.style.float = "left";
     sp.style.backgroundColor = "#ffffcc";
     sp.style.font = "8px tahoma";
     sp.style.color = "#999999";
@@ -96,6 +97,12 @@ function getKeyStroke(KeyStroke)
         if (which == 'W' || which == 'w') { 
             var me2writer_post_body = document.getElementById('me2writer_post_body');
             if (me2writer_post_body) me2writer_post_body.focus();
+            return;
+        }
+        else if (which == 'S' || which == 's') { 
+            var me2search_suggestion = document.querySelectorAll('form.c_search_suggestion.c_user input[name=query]');
+            console.log(me2search_suggestion);
+            if (me2search_suggestion) me2search_suggestion[0].focus();
             return;
         }
 
